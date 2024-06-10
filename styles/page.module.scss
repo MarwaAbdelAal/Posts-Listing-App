@@ -22,7 +22,6 @@
 
   @include desktop() {
     width: 60%;
-    margin: auto;
     padding: 3rem 2rem 0;
   }
 }
@@ -38,6 +37,10 @@
 
 .children {
   display: flex-auto;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 @keyframes rotate {

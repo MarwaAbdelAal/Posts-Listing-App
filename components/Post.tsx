@@ -3,10 +3,16 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "@/styles/post.module.scss";
+import Spinner from "./Spinner";
 import { MdFavorite } from "react-icons/md";
 
 export default function Post(post: PostProps) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  function onImageLoad() {
+    setLoading(false);
+  }
 
   const handleFavoriteToggle = () => {
     setIsFavorite(!isFavorite);
@@ -55,30 +61,36 @@ export default function Post(post: PostProps) {
         </span>
       </div>
       <div className={styles.post__imageContainer}>
-        <Image
-          src={post.image}
-          alt={post.title}
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{
-            width: "100%",
-            height: "50%",
-            borderRadius: "0.2rem",
-            opacity: 0.85,
-          }}
-          priority={false}
-        />
-        <div className={styles.post__imageContainer__overlay}>
-          <div className={styles.post__imageContainer__overlay__text}>
-            <h3>{post.title}</h3>
-            <p>{post.views} Views</p>
-          </div>
-          <MdFavorite
-            className={styles.post__imageContainer__overlay__favIcon}
-            style={{ color: isFavorite ? "red" : "white" }}
-            onClick={handleFavoriteToggle}
+        <div className={`${!loading && styles.hidden}`}>
+          <Spinner />
+        </div>
+        <div className={`${loading && styles.hidden}`}>
+          <Image
+            src={post.image}
+            alt={post.title}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "50%",
+              borderRadius: "0.2rem",
+              opacity: 0.85,
+            }}
+            priority
+            onLoad={onImageLoad}
           />
+          <div className={styles.post__imageContainer__overlay}>
+            <div className={styles.post__imageContainer__overlay__text}>
+              <h3>{post.title}</h3>
+              <p>{post.views} Views</p>
+            </div>
+            <MdFavorite
+              className={styles.post__imageContainer__overlay__favIcon}
+              style={{ color: isFavorite ? "red" : "white" }}
+              onClick={handleFavoriteToggle}
+            />
+          </div>
         </div>
       </div>
       <div className={styles.post__likes}>
