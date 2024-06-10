@@ -11,33 +11,36 @@ export default function Navbar() {
 
   return (
     <nav className={styles.nav}>
-      <Link href="/">
+      <Link
+        href="/"
+        className={`${styles.nav__item} ${
+          pathname === "/" ? styles.nav__item__active : ""
+        }`}
+      >
         {pathname === "/" ? (
-          <GoHomeFill className={styles.nav__icon} />
+          <GoHomeFill
+            className={`${styles.nav__icon} ${styles.nav__icon__active}`}
+          />
         ) : (
           <GoHome className={styles.nav__icon} />
         )}
-        <span
-          className={`${styles.nav__text} ${
-            pathname === "/" ? styles.nav__text__active : ""
-          }`}
-        >
-          Home
-        </span>
+        <span className={styles.nav__text}>Home</span>
       </Link>
-      <Link href="/favorites">
+      <Link
+        href="/favorites"
+        className={`${styles.nav__item} ${
+          pathname === "/favorites" ? styles.nav__item__active : ""
+        }`}
+      >
+        {" "}
         {pathname === "/favorites" ? (
-          <MdFavorite className={styles.nav__icon} />
+          <MdFavorite
+            className={`${styles.nav__icon} ${styles.nav__icon__active}`}
+          />
         ) : (
           <MdFavoriteBorder className={styles.nav__icon} />
         )}
-        <span
-          className={`${styles.nav__text} ${
-            pathname === "/favorites" ? styles.nav__text__active : ""
-          }`}
-        >
-          Favorites
-        </span>
+        <span className={styles.nav__text}>Favorites</span>
       </Link>
     </nav>
   );
