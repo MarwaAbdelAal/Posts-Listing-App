@@ -1,0 +1,51 @@
+@import 'mixins';
+@import 'variables';
+
+.body {
+  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: $background-color;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem 3rem;
+  margin: auto;
+
+  h2 {
+    text-align: center;
+    color: $color-primary;
+  }
+
+  @include desktop() {
+    width: 60%;
+    margin: auto;
+    padding: 3rem 2rem 0;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include desktop() {
+    flex-direction: column;
+  }
+}
+
+.children {
+  display: flex-auto;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
