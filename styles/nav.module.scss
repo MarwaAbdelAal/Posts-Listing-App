@@ -9,15 +9,28 @@
   bottom: 0;
   z-index: 1;
   background: $nav-gradient;
+  transition: transform 0.3s ease-in-out;
+
+  &__hidden {
+    transform: translateY(100%);
+
+    @include desktop() {
+      transform: translateY(-100%);
+    }
+  }
 
   @include desktop() {
     bottom: auto;
   }
 
   &__item {
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
     border-right: 1px solid $border-color;
+
+    @include desktop() {
+      padding: 0.8rem;
+    }
 
     span {
       font-weight: bold;
@@ -42,8 +55,8 @@
   }
 
   &__icon {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.5rem;
+    height: 1.5rem;
     color: $color-white;
 
     &:hover {
