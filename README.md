@@ -10,7 +10,7 @@
 
 ## Demo
 
-Check out the live demo on [Vercel](https://posts-listing-app-rho.vercel.app/) or [Github Pages](https://marwaabdelaal.github.io/Posts-Listing-App/).
+Check out the live demo on [Vercel](https://posts-listing-rho.vercel.app/) or [Github Pages](https://marwaabdelaal.github.io/Posts-Listing-App/).
 
 ## Installation
 
