@@ -10,7 +10,7 @@
 
 ## Demo
 
-Check out the live demo on [Vercel](https://posts-listing-rho.vercel.app/) or [Github Pages](https://marwaabdelaal.github.io/Posts-Listing/).
+Check out the live demo on [Vercel](https://posts-listing-app-rho.vercel.app/) or [Github Pages](https://marwaabdelaal.github.io/Posts-Listing-App/).
 
 ## Installation
 
@@ -19,13 +19,13 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/MarwaAbdelAal/Posts-Listing.git
+git clone https://github.com/MarwaAbdelAal/Posts-Listing-App.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd Posts-Listing
+cd Posts-Listing-App
 ```
 
 3. Install dependencies:
