@@ -10,6 +10,7 @@ export default function Favorites() {
   const [favoritePosts, setFavoritePosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Fetch favorite posts from local storage
   useEffect(() => {
     const favoritePostsIds = JSON.parse(localStorage.getItem('favoritePosts') || '[]');
     const favoritePosts = posts.filter((post) => favoritePostsIds.includes(post.id));
