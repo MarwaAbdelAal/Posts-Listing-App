@@ -2,18 +2,19 @@
 @import 'variables';
 
 .body {
-  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: $font-family;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   background-color: $background-color;
+  background: $gradint-color;
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  padding: 0 0.5rem 3rem;
   margin: auto;
+  padding-bottom: 3rem;
 
   h2 {
     text-align: center;
